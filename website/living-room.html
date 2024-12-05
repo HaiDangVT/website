@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Khách</title>
+    <link rel="stylesheet" href="living-room.css">
+</head>
+<body>
+    <!-- Thanh tiêu đề -->
+    <div class="header">
+        <div><img src="image/logo.png" alt="Logo"></div>
+        <div><h1>Hệ thống Smart Home</h1></div>
+        <div><img src="image/logo1.png" alt="Logo"></div>
+    </div>
+
+    <!-- Sidebar luôn hiển thị -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#" onclick="showSection('home')">
+                    <img src="image/home.png" alt="Trang chủ" class="sidebar-icon">
+                    Trang chủ
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="#" onclick="openRoom('living-room')">
+                    <img src="image/living-room (1).png" alt="Phòng khách" class="sidebar-icon">
+                    Phòng khách
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('bedroom')">
+                    <img src="image/sleep (1).png" alt="Phòng ngủ" class="sidebar-icon">
+                    Phòng ngủ
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('kitchen')">
+                    <img src="image/kitchen (1).png" alt="Phòng bếp" class="sidebar-icon">
+                    Phòng bếp
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('statistics')">
+                    <img src="image/line-chart.png" alt="Thống kê" class="sidebar-icon">
+                    Thống kê
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <!-- Phần chính của trang -->
+    <div class="main-content">
+        <!-- Widget thời tiết và thông số môi trường -->
+        <div class="hello-eliza">
+            <div class="eliza-content">
+                <h2>Hello, Đăng!</h2>
+                <p>Chúc bạn một ngày tốt lành</p>
+            </div>
+            <div class="eliza-image">
+                <img src="image/person.png" alt="Eliza" class="eliza-img">
+            </div>
+    </div>
+    <!-- Phần hiển thị ngày giờ -->
+    <div class="datetime" id="datetime"></div>
+    <div class="info-container">
+        <div class="info-box nhietdo">
+            <div class="icon">🌡️</div>
+            <h2>Nhiệt Độ</h2>
+            <p id="temperature"></p>
+        </div>
+        <div class="info-box doam">
+            <div class="icon">💧</div>
+            <h2>Độ Ẩm</h2>
+            <p class="phantram" id="humidity"></p>
+        </div>
+        <div class="info-box nongdoco2">
+            <div class="icon">💨</div>
+            <h2>Nồng Độ CO₂</h2>
+            <p id="co2-index"></p>
+        </div>
+        <div class="info-box cuongdoanhsang">
+            <div class="icon">☀️</div>
+            <h2>Cường Độ Ánh Sáng</h2>
+            <p id="anhsang"></p>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+<!-- lien ket voi functions.js -->
+
+
+        
+    
+    
+
+    <div class="thietbi" id="thietbi">
+        <div class="light" id="light">
+            <a href="#" onclick="changeImage('light')">
+                <img src="image/light-off.png" alt="light" class="small-image" id="light-image">
+            </a>
+        </div>
+        
+        <div class="fan" id="fan">
+            <a href="#" onclick="changeImage('fan')">
+                <img src="image/fan-off.png" alt="fan" class="small-image" id="fan-image">
+            </a>
+        </div>
+        <div class="dieuhoa_0" id="dieuhoa_0">
+            <a href="#" onclick="changeImage('dieuhoa')">
+                <img src="image/dieuhoa-off.png" alt="dieuhoa" class="small-image" id="dieuhoa-image">
+            </a>
+        </div>
+    </div>
+    <div class="dieuhoa" id="dieuhoa_1" style="display: none;">
+        <img class="small-image" src="image/dieuhoa-on.gif" alt="dieuhoa">
+        <div class="temperature-display" id="temperature-display">21°C</div>
+        <div class="slider-container">
+            <span class="minus" onclick="adjustTemperature(-1)">−</span>
+            <input type="range" min="10" max="30" value="21" id="tempSlider" oninput="updateTemperature(this.value)">
+            <span class="plus" onclick="adjustTemperature(1)">+</span>
+        </div>
+    </div>
+
+    <script>
+        const temperatureDisplay = document.getElementById('temperature-display');
+        const tempSlider = document.getElementById('tempSlider');
+
+        function updateTemperature(value) {
+            temperatureDisplay.innerHTML = `${value}°C`;
+        }
+
+        function adjustTemperature(change) {
+            let currentTemp = parseInt(tempSlider.value);
+            currentTemp += change;
+            if (currentTemp >= 10 && currentTemp <= 30) {
+                tempSlider.value = currentTemp;
+                updateTemperature(currentTemp);
+            }
+        }
+    </script>
+    
+    </div>
+
+    
+    <script src="living-room.js"></script>
+</body>
+</html>

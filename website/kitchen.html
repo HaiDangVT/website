@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Bếp</title>
+    <link rel="stylesheet" href="kitchen.css">
+</head>
+<body>
+    <!-- Thanh tiêu đề -->
+    <div class="header">
+        <div><img src="image/logo.png" alt="Logo"></div>
+        <div><h1>Hệ thống Smart Home</h1></div>
+        <div><img src="image/logo1.png" alt="Logo"></div>
+    </div>
+
+    <!-- Sidebar luôn hiển thị -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#" onclick="showSection('home')">
+                    <img src="image/home.png" alt="Trang chủ" class="sidebar-icon">
+                    Trang chủ
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="#" onclick="openRoom('living-room')">
+                    <img src="image/living-room (1).png" alt="Phòng khách" class="sidebar-icon">
+                    Phòng khách
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('bedroom')">
+                    <img src="image/sleep (1).png" alt="Phòng ngủ" class="sidebar-icon">
+                    Phòng ngủ
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('kitchen')">
+                    <img src="image/kitchen (1).png" alt="Phòng bếp" class="sidebar-icon">
+                    Phòng bếp
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('statistics')">
+                    <img src="image/line-chart.png" alt="Thống kê" class="sidebar-icon">
+                    Thống kê
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <!-- Phần chính của trang -->
+    <div class="main-content">
+        <!-- Widget thời tiết và thông số môi trường -->
+        <div class="hello-eliza">
+            <div class="eliza-content">
+                <h2>Hello, Đăng!</h2>
+                <p>Chúc bạn một ngày tốt lành</p>
+            </div>
+            <div class="eliza-image">
+                <img src="image/person.png" alt="Eliza" class="eliza-img">
+            </div>
+    </div>
+    <!-- Phần hiển thị ngày giờ -->
+    <div class="datetime" id="datetime"></div>
+    <div class="info-container">
+        <div class="info-box nhietdo">
+            <div class="icon">🌡️</div>
+            <h2>Nhiệt Độ</h2>
+            <p id="temperature"></p>
+        </div>
+        <div class="info-box doam">
+            <div class="icon">💧</div>
+            <h2>Độ Ẩm</h2>
+            <p class="phantram" id="humidity"></p>
+        </div>
+        <div class="info-box nongdoco2">
+            <div class="icon">💨</div>
+            <h2>Nồng Độ CO₂</h2>
+            <p id="co2-index">5</p>
+        </div>
+        <div class="info-box cuongdoanhsang">
+            <div class="icon">☀️</div>
+            <h2>Cường Độ Ánh Sáng</h2>
+            <p id="anhsang">5</p>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+<!-- lien ket voi functions.js -->
+
+
+        
+    
+    
+
+    <div class="thietbi" id="thietbi">
+        <div class="loa" id="loa">
+            <a href="#" id="lovisong" onclick="changeImage('lovisong')">
+                <img src="image/lovisong-off.png" alt="loa" class="small-image" id="lovisong-image">
+            </a>
+        </div>
+        <div class="light" id="light">
+            <a href="#" onclick="changeImage('light')">
+                <img src="image/light-off.png" alt="light" class="small-image" id="light-image">
+            </a>
+        </div>
+        
+        <div class="fan" id="fan">
+            <a href="#" onclick="changeImage('fan')">
+                <img src="image/fan-off.png" alt="fan" class="small-image" id="fan-image">
+            </a>
+        </div>
+        <div class="kitchenhood" id="kitchenhood">
+            <a href="#" onclick="changeImage('dieuhoa')">
+                <img src="image/kitchenhood-off.png" alt="kitchenhood" class="small-image" id="kitchenhood-image">
+            </a>
+        </div>
+    </div>
+    
+    
+    </div>
+
+    
+    <script src="kitchen.js"></script>
+</body>
+</html>

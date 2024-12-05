@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu đồ</title>
+    <link rel="stylesheet" href="statistics.css">
+</head>
+<body>
+    <!-- Thanh tiêu đề -->
+    <div class="header">
+        <div><img src="image/logo.png" alt="Logo"></div>
+        <div><h1>Hệ thống Smart Home</h1></div>
+        <div><img src="image/logo1.png" alt="Logo"></div>
+    </div>
+    
+    
+    <!-- Sidebar luôn hiển thị -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#" onclick="showSection('home')">
+                    <img src="image/home.png" alt="Trang chủ" class="sidebar-icon">
+                    Trang chủ
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="#" onclick="openRoom('living-room')">
+                    <img src="image/living-room (1).png" alt="Phòng khách" class="sidebar-icon">
+                    Phòng khách
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('bedroom')">
+                    <img src="image/sleep (1).png" alt="Phòng ngủ" class="sidebar-icon">
+                    Phòng ngủ
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('kitchen')">
+                    <img src="image/kitchen (1).png" alt="Phòng bếp" class="sidebar-icon">
+                    Phòng bếp
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('statistics')">
+                    <img src="image/line-chart.png" alt="Thống kê" class="sidebar-icon">
+                    Thống kê
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Nút nhấn hiển thị biểu đồ-->
+    <div class="main-content">
+        <div class="button-container">
+            <div class="button" onclick="showTemperatureCharts()">
+                <img src="image/thermometer.png" alt="Nhiệt Độ" >
+                <span>Nhiệt Độ</span>
+            </div>
+            <div class="button" onclick="showHumidityCharts()">
+                <img src="image/humidity.png" alt="Độ Ẩm">
+                <span>Độ Ẩm</span>
+            </div>
+            <div class="button" onclick="showCo2Charts()" >
+                <img src="image/co2.png" alt="Nồng độ Co2">
+                <span>Nồng độ Co2</span>
+            </div>
+            <div class="button" onclick="showSunCharts()">
+                <img src="image/sun.png" alt="Cường độ ánh sáng">
+                <span>Cường độ ánh sáng</span>
+            </div>
+        </div>
+    </div>
+    <div id="chart-container"></div>
+    <script src="statistic.js"></script>
+    

@@ -1,0 +1,303 @@
+/* Cài đặt chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ecf0f1;
+}
+
+/* Header */
+.header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    padding: 10px;
+    height: 80px;
+}
+
+.header img {
+    width: 45px;
+    height: 45px;
+}
+
+.header h1 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 200px;
+    height: calc(100% - 80px);
+    background-color: #34495e;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    padding: 12px 20px;
+    transition: 0.3s;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #2980b9;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+.sidebar-icon {
+    width: 40px; /* Kích thước hình ảnh nhỏ */
+    height: 40px;
+    margin-bottom: 5px; /* Khoảng cách giữa hình ảnh và văn bản */
+}
+
+/* Nội dung chính */
+.main-content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* Hello Eliza section */
+.hello-eliza {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+    padding: 20px;
+    border-radius: 15px;
+    color: #fff;
+    height: 180px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+    margin-bottom: 20px;
+}
+
+.eliza-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.eliza-img {
+    width: 140px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Sensor Container */
+.sensor-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các ô bao quanh khi không đủ chỗ */
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 30px; /* Khoảng cách giữa các ô */
+    max-width: calc(100% - 300px); /* Đảm bảo các ô không bị chạm đến các nút nhấn */
+}
+
+/* Ô cảm biến UV index */
+.uv-index {
+    background-color: #f9f6f5;
+    margin-top: 30px; /* Tạo khoảng cách với ô bên trên */
+    margin-left: 70px; /* Thụt vào từ bên trái */
+    width: 400px; /* Chiều rộng cố định */
+    height: 250px; /* Chiều cao cố định */
+    flex: 1; /* Chiếm không gian còn lại */
+    padding: 20px; /* Padding đồng đều quanh ô */
+    border-radius: 15px;
+    color: #020000;
+    display: flex; /* Sử dụng flexbox để quản lý vị trí */
+    flex-direction: column; /* Căn chỉnh theo chiều dọc */
+    align-items: center; /* Căn giữa tất cả các nội dung bên trong */
+    text-align: center; /* Căn giữa văn bản bên trong */
+}
+
+.uv-index h3,
+.air-quality h3,
+.outside-temperature h3,
+.outside-humidity h3 {
+    display: flex; /* Sử dụng flexbox cho tiêu đề */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    font-size: 30px; /* Đảm bảo kích thước chữ vừa phải */
+    line-height: 1; /* Thiết lập chiều cao dòng cho chữ */
+}
+
+.uv-icon,
+.air-quality-icon,
+.tem-icon,
+.humidity-icon {
+    width: 40px; /* Kích thước hình ảnh */
+    height: 40px; /* Kích thước hình ảnh */
+    margin-right: 10px; /* Khoảng cách giữa hình ảnh và tiêu đề */
+    transform: translateY(-8px);
+}
+
+/* Thêm CSS cho giá trị hiển thị */
+.value {
+    flex: 1; /* Chiếm không gian còn lại */
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    font-size: 30px; /* Kích thước chữ lớn hơn cho giá trị */
+    height: 100%; /* Đảm bảo phần hiển thị giá trị chiếm toàn bộ chiều cao */
+    padding-top: 10px; /* Thêm một ít khoảng cách từ tiêu đề nếu cần */
+}
+
+
+
+/* Ô cảm biến Nhiệt độ */
+.outside-temperature {
+    background-color: #f9f6f5;
+    margin-top: 30px; /* Tạo khoảng cách với ô bên trên */
+    margin-left: 70px; /* Thụt vào từ bên trái */
+    width: 400px; /* Chiều rộng cố định */
+    height: 250px; /* Chiều cao cố định */
+    flex: 1; /* Chiếm không gian còn lại */
+    padding: 20px; /* Padding đồng đều quanh ô */
+    border-radius: 15px;
+    color: #020000;
+    display: flex; /* Sử dụng flexbox để quản lý vị trí */
+    flex-direction: column; /* Căn chỉnh theo chiều dọc */
+    align-items: center; /* Căn giữa tất cả các nội dung bên trong */
+    text-align: center; /* Căn giữa văn bản bên trong */
+    transform: translateX(-270px); /* Dịch chuyển ô sang trái */
+}
+
+
+/* Ô cảm biến Độ ẩm */
+.outside-humidity {
+    background-color: #f9f6f5;
+    margin-top: 30px; /* Tạo khoảng cách với ô bên trên */
+    margin-left: 70px; /* Thụt vào từ bên trái */
+    width: 400px; /* Chiều rộng cố định */
+    height: 250px; /* Chiều cao cố định */
+    flex: 1; /* Chiếm không gian còn lại */
+    padding: 20px; /* Padding đồng đều quanh ô */
+    border-radius: 15px;
+    color: #020000;
+    display: flex; /* Sử dụng flexbox để quản lý vị trí */
+    flex-direction: column; /* Căn chỉnh theo chiều dọc */
+    align-items: center; /* Căn giữa tất cả các nội dung bên trong */
+    text-align: center; /* Căn giữa văn bản bên trong */
+    transform: translateX(-270px); /* Dịch chuyển ô sang trái */
+}
+
+
+
+
+/* Ô cảm biến Chất lượng không khí */
+.air-quality {
+    background-color: #f9f6f5;
+    margin-top: 30px; /* Tạo khoảng cách với ô bên trên */
+    margin-left: 70px; /* Thụt vào từ bên trái */
+    width: 400px; /* Chiều rộng cố định */
+    height: 250px; /* Chiều cao cố định */
+    flex: 1; /* Chiếm không gian còn lại */
+    padding: 20px; /* Padding đồng đều quanh ô */
+    border-radius: 15px;
+    color: #020000;
+    display: flex; /* Sử dụng flexbox để quản lý vị trí */
+    flex-direction: column; /* Căn chỉnh theo chiều dọc */
+    align-items: center; /* Căn giữa tất cả các nội dung bên trong */
+    text-align: center; /* Căn giữa văn bản bên trong */
+}
+
+
+
+/* Hiệu ứng hover cho các ô cảm biến */
+.uv-index:hover, 
+.outside-temperature:hover, 
+.outside-humidity:hover, 
+.air-quality:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Điều chỉnh vị trí của các nút phòng */
+.rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Khoảng cách giữa các nút */
+    position: fixed; /* Đặt các nút nhấn cố định */
+    right: 150px;
+    bottom: 20px; /* Điều chỉnh khoảng cách từ đáy */
+    z-index: 1000; /* Đảm bảo rằng các nút nằm trên các phần tử khác */
+}
+
+.room-btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 30px;
+    width: 220px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.room-btn img {
+    width: 75px;
+    height: 75px;
+}
+
+.room-btn:hover {
+    background: #0072ff;
+    transform: scale(1.05);
+}
+
+.room-btn p {
+    margin: 12px 0 0;
+    font-size: 20px;
+}
+.datetime {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Thêm hiệu ứng gradient */
+    color: #fff; /* Màu chữ trắng để nổi bật trên nền */
+    font-size: 22px; /* Giảm kích thước một chút để cân đối */
+    font-weight: bold; /* Đậm hơn để thu hút */
+    text-align: center; /* Căn giữa văn bản */
+    padding: 20px 30px; /* Tạo khoảng cách bên trong để chữ không dính vào viền */
+    border-radius: 20px; /* Đường viền cong tròn mềm mại hơn */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng mềm mại */
+    width: 260px; /* Kích thước vừa phải để cân đối với các nút phòng */
+    height: 180px;
+    position: fixed; /* Cố định vị trí khi cuộn trang */
+    right: 130px; /* Điều chỉnh khoảng cách từ bên phải */
+    top: 100px; /* Điều chỉnh khoảng cách từ phía trên */
+    z-index: 1000; /* Đảm bảo nó nằm trên các phần tử khác */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái cho dễ đọc */
+}
+
+.datetime span {
+    display: block; /* Chia hàng cho ngày và giờ */
+    margin-bottom: 10px; /* Tạo khoảng cách giữa ngày và giờ */
+    font-size: 18px; /* Kích thước chữ nhỏ hơn cho ngày */
+    opacity: 0.9; /* Giảm độ đậm của ngày để phân biệt */
+}
+
+
+
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Nhà Thông Minh</title>
+    <link rel="stylesheet" href="demo.css">
+    <script src="demo.js"></script>
+</head>
+<body>
+    <!-- Thanh tiêu đề -->
+    <div class="header">
+        <div><img src="image/logo.png" alt="Logo"></div>
+        <div><h1>Hệ thống Smart Home</h1></div>
+        <div><img src="image/logo1.png" alt="Logo"></div>
+    </div>
+
+    <!-- Sidebar luôn hiển thị -->
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#" onclick="showSection('home')">
+                    <img src="image/home.png" alt="Trang chủ" class="sidebar-icon">
+                    Trang chủ
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="#" onclick="openRoom('living-room')">
+                    <img src="image/living-room (1).png" alt="Phòng khách" class="sidebar-icon">
+                    Phòng khách
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('bedroom')">
+                    <img src="image/sleep (1).png" alt="Phòng ngủ" class="sidebar-icon">
+                    Phòng ngủ
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('kitchen')">
+                    <img src="image/kitchen (1).png" alt="Phòng bếp" class="sidebar-icon">
+                    Phòng bếp
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="openRoom('statistics')">
+                    <img src="image/line-chart.png" alt="Thống kê" class="sidebar-icon">
+                    Thống kê
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+
+    <!-- Phần chính của trang -->
+    <div class="main-content">
+        <!-- Widget thời tiết và thông số môi trường -->
+        <div class="hello-eliza">
+            <div class="eliza-content">
+                <h2>Hello, Đăng!</h2>
+                <p>Chúc bạn một ngày tốt lành</p>
+            </div>
+            <div class="eliza-image">
+                <img src="image/person.png" alt="Eliza" class="eliza-img">
+            </div>
+        </div>
+        
+        <div class="sensor-container">
+            <!-- Phần bên trái: Chỉ số UV và Chất lượng không khí -->
+            <div class="left-container">
+                <div class="uv-index">
+                    <h3>
+                        <img src="image/tanning.png" alt="Chỉ số UV" class="uv-icon"> <!-- Thêm hình ảnh -->
+                        Chỉ số UV
+                    </h3>
+                    <div class="value" id="uv-index">Đang tải...</div> <!-- Giá trị chỉ số UV -->
+                </div>
+                
+                <div class="air-quality">
+                    <h3>
+                        <img src="image/air-quality.png" alt="Chất lượng không khí" class ="air-quality-icon">
+                        Chất lượng không khí
+                    </h3>
+                    <div class = "value" id="air-quality">Đang tải...</div> <!-- Chất lượng không khí -->
+                </div>
+            </div>
+
+            <!-- Phần bên phải: Nhiệt độ và Độ ẩm -->
+            <div class="right-container">
+                <div class="outside-temperature">
+                    <h3>
+                        <img src="image/thermometer.png" alt="Nhiệt độ" class ="tem-icon">
+                        Nhiệt độ
+                    </h3>
+                    <div class="value" id="temperature">Đang tải...</div> <!-- ID cho nhiệt độ -->
+                </div>
+                <div class="outside-humidity">
+                    <h3>
+                        <img src="image/humidity.png" alt="độ ẩm" class ="humidity-icon">
+                        Độ ẩm
+                    </h3>
+                    <div class="value" id="humidity">Đang tải...</div> <!-- ID cho độ ẩm -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phần hiển thị ngày giờ -->
+        <div class="datetime" id="datetime"></div>
+
+        <!-- Phần các nút bấm cho các phòng ở bên phải -->
+        <div class="rooms">
+            <button class="room-btn" onclick="openRoom('living-room')">
+                <img src="image/living-room.png" alt="Phòng khách" class="room-img">
+                <p>Phòng khách</p>
+            </button>
+            <button class="room-btn" onclick="openRoom('bedroom')">
+                <img src="image/sleep.png" alt="Phòng ngủ" class="room-img">
+                <p>Phòng ngủ</p>
+            </button>
+            <button class="room-btn" onclick="openRoom('kitchen')">
+                <img src="image/kitchen.png" alt="Phòng bếp" class="room-img">
+                <p>Phòng bếp</p>
+            </button>
+        </div>
+
+        
+
+
+
+</body>
+</html>

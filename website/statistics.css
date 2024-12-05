@@ -1,0 +1,142 @@
+/* Cài đặt chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ecf0f1;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    padding: 10px;
+    height: 80px;
+}
+
+.header img {
+    width: 45px;
+    height: 45px;
+}
+
+.header h1 {
+    font-size: 26px;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 200px;
+    height: calc(100% - 80px);
+    background-color: #34495e;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    padding: 12px 20px;
+    transition: 0.3s;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #2980b9;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+.sidebar-icon {
+    width: 40px; /* Kích thước hình ảnh nhỏ */
+    height: 40px;
+    margin-bottom: 5px; /* Khoảng cách giữa hình ảnh và văn bản */
+}
+
+
+
+
+/* Container cho các nút */
+.button-container {
+    display: flex;
+    align-items: center;
+   
+}
+
+/* Định dạng cho từng nút */
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px;
+    width: 250px;
+    height:150px;
+    margin: 80px;
+    margin-top: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.button img {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+/* Đảm bảo không đè lên sidebar */
+.main-content {
+    margin-left: 220px; /* Đẩy nội dung chính sang phải để không đè lên sidebar */
+    
+}
+
+#chart-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho hàng đầu tiên */
+    grid-template-rows: auto auto;         /* 2 hàng: hàng đầu cho 2 biểu đồ, hàng sau cho 1 biểu đồ */
+    justify-items: center;                 /* Căn giữa biểu đồ */
+    margin-top: -90px;
+    margin-left: 180px;
+}
+
+#chart-container iframe {
+    width: 500px;
+    height: 300px;
+    margin: 20px;  /* Thêm khoảng cách margin cho các iframe */
+}
+
+#chart-container iframe:nth-child(3) {
+    grid-column: span 2;  /* Biểu đồ thứ ba chiếm cả 2 cột ở hàng dưới */
+}
+
+
+
+
+
